@@ -5,7 +5,17 @@ class Follow:
         return target
 
     def closeEnough(self, current, target):
-        if current - target > [1,1,1]
+        diff = target - current
+        if diff[0] < 0:
+            diff[0] *= -1
+        if diff[1] < 0:
+            diff[1] *= -1
+        if diff[2] < 0:
+            diff[2] *= -1
+        if diff > [1,1,1]:
             return False
         else:
             return True
+
+    def whichWay(self, current, target):
+        return
