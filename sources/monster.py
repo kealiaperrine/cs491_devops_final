@@ -6,6 +6,7 @@ class Monster:
         self.speed = 0
         self.maxSpeed = 4
         self.acceleration = 1
+        self.position = [0,0,0]
 
     def damage(self):
         self.health -= 1
