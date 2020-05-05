@@ -33,7 +33,35 @@ class PlayerMethods(unittest.TestCase):
         player1.increase_z_velocity()
         self.assertNotEqual(player1.velocity, [0,0,0])
 
+    def test_change_x_pos_true(self):
+        player1 = Player()
+        player1.change_x_pos()
+        self.assertEqual(player1.position, [2,0,0])
 
+    def test_change_x_pos_false(self):
+        player1 = Player()
+        player1.change_x_pos()
+        self.assertNotEqual(player1.position, [0, 0, 0])
+
+    def test_change_y_pos_true(self):
+        player1 = Player()
+        player1.change_y_pos()
+        self.assertEqual(player1.position, [0,2,0])
+
+    def test_change_y_pos_false(self):
+        player1 = Player()
+        player1.change_y_pos()
+        self.assertNotEqual(player1.position, [0, 0, 0])
+
+    def test_change_z_pos_true(self):
+        player1 = Player()
+        player1.change_z_pos()
+        self.assertEqual(player1.position, [0,0,2])
+
+    def test_change_z_pos_false(self):
+        player1 = Player()
+        player1.change_z_pos()
+        self.assertNotEqual(player1.position, [0, 0, 0])
 
 if __name__ == '__main__':
     unittest.main()
