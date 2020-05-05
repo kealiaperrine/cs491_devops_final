@@ -1,15 +1,15 @@
 pipeline {
-    agent none 
+    agent none
     stages {
-        stage('Build') { 
+        stage('Build') {
             agent {
                 docker {
-                    image 'python:2-alpine' 
+                    image 'python:2-alpine'
                 }
             }
             steps {
-                sh 'python -m py_compile sources/follow.py sources/monster.py sources/physics.py sources/player.py' 
-                stash(name: 'compiled-results', includes: 'sources/*.py*') 
+                sh 'python -m py_compile sources/follow.py sources/monster.py sources/physics.py sources/player.py'
+                stash(name: 'compiled-results', includes: 'sources/*.py*')
             }
         }
 
@@ -20,7 +20,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'py.test --junit-xml test-reports/results.xml sources/unit_test_monster.py sources/unit_test_physics.py sources/unit_test_player.py'
+                sh 'py.test --junit-xml test-reports/results.xml sources/unit_test_monster.py sources/unit_test_physics.py sources/unit_test_player.py sources/unit_test_follow.py sources/integration_test.py'
             }
             post {
                 always {
