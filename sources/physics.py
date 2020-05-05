@@ -1,4 +1,3 @@
-import math
 
 class Physics:
 
@@ -12,5 +11,6 @@ class Physics:
         return vel
 
     def update_position(self, vel, pos, time):
-        pos = [x * time for x in vel]
+        mult = [x * time for x in vel]
+        pos = [a + b for a, b in zip(pos, mult)]
         return pos
