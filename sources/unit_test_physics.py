@@ -11,20 +11,35 @@ class PhysicsMethods(unittest.TestCase):
         physics = Physics()
         self.assertNotEqual(physics.update_speed(5,6,1), 5)
 
-    def test_update_velocity_x(self):
+    def test_update_velocity_x_true(self):
         physics = Physics()
         velocity = [0,0,0]
         self.assertEqual(physics.update_velocity(velocity, 5, 0), [5,0,0])
 
-    def test_update_velocity_y(self):
+    def test_update_velocity_x_false(self):
+        physics = Physics()
+        velocity = [0,0,0]
+        self.assertNotEqual(physics.update_velocity(velocity, 5, 0), [0,0,0])
+
+    def test_update_velocity_y_true(self):
         physics = Physics()
         velocity = [0,0,0]
         self.assertEqual(physics.update_velocity(velocity, 5, 1), [0,5,0])
 
-    def test_update_velocity_z(self):
+    def test_update_velocity_y_false(self):
+        physics = Physics()
+        velocity = [0,0,0]
+        self.assertNotEqual(physics.update_velocity(velocity, 5, 1), [0,0,0])
+
+    def test_update_velocity_z_true(self):
         physics = Physics()
         velocity = [0,0,0]
         self.assertEqual(physics.update_velocity(velocity, 5, 2), [0,0,5])
+
+    def test_update_velocity_z_false(self):
+        physics = Physics()
+        velocity = [0,0,0]
+        self.assertNotEqual(physics.update_velocity(velocity, 5, 2), [0,0,0])
 
     def test_update_position_true(self):
         physics = Physics()
