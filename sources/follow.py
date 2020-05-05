@@ -17,5 +17,5 @@ class Follow:
         else:
             return True
 
-    def whichWay(self, current, target):
-        return
+    #def whichWay(self, current, target):
+    #    return
