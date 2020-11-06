@@ -1,3 +1,4 @@
 # CS 491 Final Project
 
-Hello
+Deploying project to jenkins to run automated tests
+
